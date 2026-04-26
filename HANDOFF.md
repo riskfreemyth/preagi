@@ -1,65 +1,59 @@
 # preagi — Handoff
 
-The "where did we leave off" doc. Update at the end of every working session. Last updated: **2026-04-26** (initial v1 build session).
+The "where did we leave off" doc. Update at the end of every working session. Last updated: **2026-04-26** (deploy day).
 
-## Status: v1 built locally, not yet deployed
+## Status: v1 LIVE at https://preagi.ai
 
-Site builds cleanly. Dev server confirmed working at http://localhost:4321/ (will be killed on machine restart — restart with `npm run dev`).
+- Apex `preagi.ai` → Vercel production (Valid)
+- `www.preagi.ai` → 308 → `preagi.ai` (Valid)
+- `preagi.vercel.app` → Vercel production (Valid)
+- GitHub: `github.com/riskfreemyth/preagi` (public, auto-deploy from `main`)
+- Verified externally: 200 on apex, 308 on www, HTML and OG meta render
 
 ## Done
 
-- [x] Bought `preagi.ai` and `preagi.dev` on Porkbun (`preagi.com` wasn't available)
-- [x] Email forwarding set up: `hello@preagi.ai` → `avinashgopinathan6@gmail.com`
-- [x] Node 25 installed via Homebrew
-- [x] Astro + Tailwind scaffold at `~/code/preagi/`
-- [x] Four v1 sections built (Hero, Socials, HowIWork, ViewsOnAI)
+- [x] Domains registered on Porkbun: `preagi.ai` (primary), `preagi.dev` (parked)
+- [x] Email forwarding: `hello@preagi.ai` → `avinashgopinathan6@gmail.com`
+- [x] Astro 6 + Tailwind v4 scaffold at `~/code/preagi/`
+- [x] v1 sections: Hero, Socials, HowIWork (4 principles after trim), ViewsOnAI
 - [x] Editorial design system (Fraunces + Inter + JetBrains Mono, warm bg, burnt-orange accent, system dark/light)
-- [x] `IDEAS.md` seeded with v2+ roadmap
-- [x] Local git: 2 commits on `main`, no remote yet
-- [x] Build verified: `npm run build` clean
+- [x] `gh` CLI installed + authenticated as `riskfreemyth`
+- [x] Pushed to GitHub on `main`
+- [x] Vercel project connected to GitHub, auto-deploy on `main` push
+- [x] DNS at Porkbun:
+  - `A @ → 216.198.79.1` (apex to Vercel)
+  - `CNAME www → 1d4b65179256b230.vercel-dns-017.com` (www to Vercel)
+  - Deleted Porkbun's parking `CNAME *.preagi.ai → pixie.porkbun.com`
+  - Kept email records (MX fwd1/fwd2.porkbun.com, SPF TXT)
 
-## Blocked / open
+## Open / next session
 
-- [ ] **Vercel login** — Avinash hit a login issue. Suspects: popup blocker on GitHub OAuth, or magic-link email not arriving. Backup options if Vercel keeps fighting: Cloudflare Pages, Netlify (both free, both auto-deploy from GitHub).
-- [ ] **GitHub push** — Avinash said "GitHub done" but local repo has no remote configured (`git remote -v` is empty). Either the remote command wasn't run, or it ran in a different shell. Need GitHub username to set up `git remote add origin` and push.
-
-## Next actions (in order)
-
-1. **Verify GitHub state** — confirm the repo exists on GitHub (likely `github.com/<username>/preagi`), then locally:
-   ```
-   cd ~/code/preagi
-   git remote add origin git@github.com:<username>/preagi.git
-   git push -u origin main
-   ```
-2. **Resolve Vercel login** — diagnose specific error and unblock. Or pivot to Cloudflare Pages / Netlify.
-3. **Deploy** — connect repo on Vercel, accept Astro auto-detect, deploy.
-4. **Wire DNS at Porkbun** — A record (`76.76.21.21`) and CNAME (`cname.vercel-dns.com`) for `preagi.ai` and `www.preagi.ai`.
-5. **Mobile + desktop check on live URL.**
-6. **Lighthouse audit** — target ≥ 90 on all four categories.
-
-## Open copy edits Avinash hasn't reviewed yet
-
-These were drafted from the persona file. Worth a careful read before publish:
-
-- **`src/components/Hero.astro`** — current one-liner: *"Director of Underwriting Strategy at Ramp. I own the credit policy and lead the push to automate underwriting decisions. Operator who sees systems and brings out the best in people."*
-- **`src/components/HowIWork.astro`** — 7 principles with title + body. Titles I wrote are mine; some may want edits ("Optimize for myself, sober about institutions" is the most editorial).
-- **`src/components/ViewsOnAI.astro`** — 5-paragraph essay with the "We are pre-AGI" hook. This is the section Parag would actually read. Spend the most time here.
+- [ ] **Copy review on Hero.astro and ViewsOnAI.astro** — both still in v1 form, drafted from persona file. ViewsOnAI is the high-leverage one (the section Parag would actually read). Hero is a one-liner; quick.
+- [ ] **Mobile + desktop eyeball pass** on live URL
+- [ ] **Lighthouse audit** — target ≥ 90 across all four categories. Run via Chrome DevTools or `npx lighthouse https://preagi.ai --view`
+- [ ] **Git author config** — current commits show `Cova Benu <covabenu@Covas-Mac-mini.local>`. Run:
+  ```
+  git config --global user.name "Avinash Gopinathan"
+  git config --global user.email "<github-noreply or real email>"
+  ```
+- [ ] **OG image** — currently no `og:image` meta. Worth adding for link previews on Twitter/LinkedIn/iMessage.
 
 ## Decisions banked (don't relitigate)
 
-- Domain: `preagi.ai` primary, `preagi.dev` parked.
+- Domain: `preagi.ai` primary (apex canonical), `preagi.dev` parked.
 - Stack: Astro + Tailwind + Vercel (no Next.js, no Framer).
-- v1 = single landing page, four sections. Everything else lives in `IDEAS.md` until we build it.
+- v1 = single landing page, four sections. Everything else lives in `IDEAS.md` until built.
 - No photo on hero (text-only is on-brand).
 - No dark/light toggle in v1 (system pref only).
 - Email: `hello@preagi.ai`.
+- Deploy flow: push to `main` on GitHub → Vercel auto-deploys. No manual deploy step needed.
 
 ## How to recover after a machine restart
 
 ```bash
 cd ~/code/preagi
 claude --resume      # or: claude (CLAUDE.md auto-loads, then read this file)
-npm run dev          # bring back the dev server
+npm run dev          # local preview at localhost:4321
 ```
 
 Tell Claude: *"Read HANDOFF.md and pick up from there."*
