@@ -1,4 +1,6 @@
-# preagi.com — Running Ideas
+# preagi.ai — Running Ideas
+
+**Domains owned (Porkbun):** `preagi.ai` (primary, live), `preagi.dev` (parked — likely future home for a code/projects subsite or agent endpoint).
 
 The working list of what should eventually live on the site, beyond the v1 landing page. Nothing here is committed; it's a parking lot for ideas Avinash drops in over time. Items get pulled into the site when they're ready, not when they're listed.
 
