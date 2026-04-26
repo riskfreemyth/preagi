@@ -1,17 +1,21 @@
 ---
-
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import Socials from "../components/Socials.astro";
+import HowIWork from "../components/HowIWork.astro";
+import ViewsOnAI from "../components/ViewsOnAI.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <Hero />
+  <hr class="rule mb-16 sm:mb-20" />
+  <Socials />
+  <hr class="rule mb-16 sm:mb-20" />
+  <HowIWork />
+  <hr class="rule mb-16 sm:mb-20" />
+  <ViewsOnAI />
+  <footer class="rule pt-8 mono text-xs muted flex justify-between">
+    <span>© Avinash Gopinathan</span>
+    <span>preagi.com</span>
+  </footer>
+</Base>

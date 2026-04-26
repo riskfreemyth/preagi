@@ -1,0 +1,50 @@
+---
+const links = [
+  {
+    label: "X / Twitter",
+    handle: "@riskfreemyth",
+    href: "https://twitter.com/riskfreemyth",
+  },
+  {
+    label: "Cooking",
+    handle: "@cooktochef",
+    href: "https://instagram.com/cooktochef",
+  },
+  {
+    label: "Cova (the Hovawart)",
+    handle: "@covathehova",
+    href: "https://instagram.com/covathehova",
+  },
+  {
+    label: "Podcast",
+    handle: "Unfriendly Banter",
+    href: "https://www.youtube.com/@unfriendlybanter",
+  },
+  {
+    label: "Email",
+    handle: "hello@preagi.com",
+    href: "mailto:hello@preagi.com",
+  },
+];
+---
+
+<section class="mb-16 sm:mb-20">
+  <h2 class="mono text-xs uppercase tracking-[0.2em] muted mb-6">
+    Where to find me
+  </h2>
+  <ul class="space-y-3">
+    {links.map((l) => (
+      <li class="flex items-baseline justify-between gap-4">
+        <span class="muted">{l.label}</span>
+        <a
+          href={l.href}
+          target={l.href.startsWith("mailto:") ? undefined : "_blank"}
+          rel="noreferrer"
+          class="mono text-sm"
+        >
+          {l.handle}
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>

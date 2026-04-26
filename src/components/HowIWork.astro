@@ -1,0 +1,48 @@
+---
+const principles = [
+  {
+    title: "Ship, then refine.",
+    body: "Action over polish. Reality is the editor.",
+  },
+  {
+    title: "First principles, always.",
+    body: "Strip the problem to its base. Don't reason from analogies when you can reason from physics.",
+  },
+  {
+    title: "Mamba mentality.",
+    body: "Get better every day. Be ruthless with time — low-impact work is the enemy.",
+  },
+  {
+    title: "AI is the unlock.",
+    body: "Common sense + AI = expert in any field. Everyone is a builder now; the tools just caught up.",
+  },
+  {
+    title: "Family is the bedrock.",
+    body: "Anything that threatens Dhanya or Cova gets prioritized over everything else.",
+  },
+  {
+    title: "Optimize for myself, sober about institutions.",
+    body: "Companies optimize for the company. I optimize for myself within them. Not bitter — clear.",
+  },
+  {
+    title: "The greatest version of myself, daily.",
+    body: "Not money, titles, comfort, or looks. Those are other people's games.",
+  },
+];
+---
+
+<section class="mb-16 sm:mb-20">
+  <h2 class="mono text-xs uppercase tracking-[0.2em] muted mb-6">
+    How I work
+  </h2>
+  <ul class="space-y-5">
+    {principles.map((p) => (
+      <li>
+        <p class="leading-relaxed">
+          <strong class="font-semibold">{p.title}</strong>
+          <span class="muted"> {p.body}</span>
+        </p>
+      </li>
+    ))}
+  </ul>
+</section>
