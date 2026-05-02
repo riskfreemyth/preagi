@@ -1,5 +1,5 @@
 ---
-const links = [
+const primary = [
   {
     label: "Work",
     handle: "ramp.com",
@@ -15,30 +15,15 @@ const links = [
     handle: "@preagi",
     href: "https://substack.com/@preagi",
   },
+];
+
+const elsewhere = [
+  { handle: "@riskfreemyth", href: "https://twitter.com/riskfreemyth" },
+  { handle: "@cooktochef", href: "https://instagram.com/cooktochef" },
+  { handle: "@covathehova", href: "https://instagram.com/covathehova" },
   {
-    label: "X / Twitter",
-    handle: "@riskfreemyth",
-    href: "https://twitter.com/riskfreemyth",
-  },
-  {
-    label: "Cooking",
-    handle: "@cooktochef",
-    href: "https://instagram.com/cooktochef",
-  },
-  {
-    label: "Cova (the Hovawart)",
-    handle: "@covathehova",
-    href: "https://instagram.com/covathehova",
-  },
-  {
-    label: "Podcast",
     handle: "Unfriendly Banter",
     href: "https://www.youtube.com/@unfriendlybanter",
-  },
-  {
-    label: "Email",
-    handle: "hello@preagi.ai",
-    href: "mailto:hello@preagi.ai",
   },
 ];
 ---
@@ -47,19 +32,39 @@ const links = [
   <h2 class="mono text-sm uppercase tracking-[0.2em] accent mb-6">
     Where to find me
   </h2>
+
   <ul class="space-y-3">
-    {links.map((l) => (
-      <li class="flex items-baseline justify-between gap-4">
-        <span class="muted">{l.label}</span>
-        <a
-          href={l.href}
-          target={l.href.startsWith("mailto:") ? undefined : "_blank"}
-          rel="noreferrer"
-          class="mono text-sm"
-        >
-          {l.handle}
-        </a>
-      </li>
-    ))}
+    {
+      primary.map((l) => (
+        <li class="flex items-baseline justify-between gap-4">
+          <span class="muted">{l.label}</span>
+          <a
+            href={l.href}
+            target="_blank"
+            rel="noreferrer"
+            class="mono text-sm"
+          >
+            {l.handle}
+          </a>
+        </li>
+      ))
+    }
   </ul>
+
+  <p class="mono text-sm muted mt-6 leading-relaxed">
+    {
+      elsewhere.map((l, i) => (
+        <>
+          {i > 0 && <span> · </span>}
+          <a href={l.href} target="_blank" rel="noreferrer">
+            {l.handle}
+          </a>
+        </>
+      ))
+    }
+  </p>
+
+  <p class="mono text-sm mt-3">
+    <a href="mailto:hello@preagi.ai" rel="noreferrer">hello@preagi.ai</a>
+  </p>
 </section>
