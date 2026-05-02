@@ -9,7 +9,7 @@ const article = {
 
 <section class="mb-8 sm:mb-10">
   <h2 class="mono text-sm uppercase tracking-[0.2em] accent mb-1">
-    Take on AI
+    Latest writing
   </h2>
   <p class="mono text-xs muted mb-6">May 2026</p>
   <div class="prose text-lg leading-[1.7]">
@@ -25,25 +25,30 @@ const article = {
     href={article.url}
     target="_blank"
     rel="noreferrer"
-    class="block mt-8 group"
+    class="block mt-8"
     style="border-bottom: none"
   >
-    <img
-      src={article.cover}
-      alt={article.title}
-      width="1248"
-      height="832"
-      loading="lazy"
-      class="w-full h-auto block"
-    />
-    <p class="text-xl font-medium leading-snug mt-4">
-      {article.title}
-    </p>
-    <p class="muted text-base leading-relaxed mt-2">
-      {article.subtitle}
-    </p>
-    <p class="mono text-xs accent mt-3 uppercase tracking-[0.2em]">
-      Read on Substack →
-    </p>
+    <div class="bg-[var(--color-bg-elev)] p-5 sm:p-6">
+      <p class="mono text-xs uppercase tracking-[0.2em] muted mb-4">
+        From Substack · @preagi
+      </p>
+      <img
+        src={article.cover}
+        alt={article.title}
+        width="1248"
+        height="832"
+        loading="lazy"
+        class="w-full h-auto block"
+      />
+      <p class="text-xl font-medium leading-snug mt-4">
+        {article.title}
+      </p>
+      <p class="muted text-base leading-relaxed mt-2">
+        {article.subtitle}
+      </p>
+      <p class="mono text-xs accent mt-3 uppercase tracking-[0.2em]">
+        Read on Substack →
+      </p>
+    </div>
   </a>
 </section>
