@@ -77,6 +77,15 @@ a:hover {
   color: var(--color-accent);
 }
 
+.icon-link {
+  color: var(--color-ink-muted);
+  border-bottom: none;
+  display: inline-flex;
+}
+.icon-link:hover {
+  color: var(--color-accent);
+}
+
 .prose p {
   margin-block: 1rem;
 }
