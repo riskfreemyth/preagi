@@ -1,23 +1,48 @@
 ---
+const article = {
+  url: "https://preagi.substack.com/p/take-on-ai",
+  title: "Common Sense × AI: A Non-SWE's take on the pre-agi era",
+  subtitle: "The real moat isn't code — it's judgment.",
+  cover: "/take-on-ai-cover.jpg",
+};
 ---
 
 <section class="mb-8 sm:mb-10">
   <h2 class="mono text-sm uppercase tracking-[0.2em] accent mb-1">
     Take on AI
   </h2>
-  <p class="mono text-xs muted mb-6">April 2026</p>
+  <p class="mono text-xs muted mb-6">May 2026</p>
   <div class="prose text-lg leading-[1.7]">
     <p>
-      We are <span class="accent">pre-AGI</span>. Not because the models aren't capable — they are — but because most of the world is still operating as if the tools haven't caught up yet. They have. The work now is figuring out what to do with them.
-    </p>
-    <p>
-      Here's what I actually believe: <strong>common sense + AI = expert in any field</strong>. Every domain that used to require a decade of pattern-matching can now be entered, learned, and contributed to by anyone who can think clearly and use the tools well. The moat is no longer information. It's judgment, taste, and the willingness to ship.
-    </p>
-    <p>
-      Everyone is a builder now. The bottleneck used to be coding skill, design skill, distribution. The tools just collapsed those. What's left is wanting to do something specific, and doing it.
-    </p>
-    <p>
-      The risk most people overlook: AI is a multiplier on whatever you bring to it. Bring sharp judgment and you get leverage. Bring noise and you get more noise, faster. The next decade's winners are the ones who treat first-principles thinking and AI fluency as the same skill, not two skills.
+      We are <span class="accent">pre-AGI</span>. Not because the models aren't
+      capable — they are — but because most of the world is still operating as
+      if the tools haven't caught up yet. They have. The work now is figuring
+      out what to do with them.
     </p>
   </div>
+
+  <a
+    href={article.url}
+    target="_blank"
+    rel="noreferrer"
+    class="block mt-8 group"
+  >
+    <img
+      src={article.cover}
+      alt={article.title}
+      width="1248"
+      height="832"
+      loading="lazy"
+      class="w-full h-auto block"
+    />
+    <p class="serif text-xl font-medium leading-snug mt-4">
+      {article.title}
+    </p>
+    <p class="muted text-base leading-relaxed mt-2">
+      {article.subtitle}
+    </p>
+    <p class="mono text-xs accent mt-3 uppercase tracking-[0.2em]">
+      Read on Substack →
+    </p>
+  </a>
 </section>
